@@ -1,4 +1,42 @@
 body
 {
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    color: white;
+}
+nav
+{
+    display: FLEX;
+    text-align: center;
+    margin:0.5rem 4rem;
+    justify-content: center;
+}
+nav a{
+    padding: 0 2%;
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+}
+/*phone*/
+@media (min-width: 320px)
+{
+nav {
+font-size: 60%;
+}
+}
+/*Tablet*/
+@media (min-width: 768px) {
+nav {
+font-size: 100%;
+}
+}
+/*PC*/
+@media (min-width: 1024px) {
+
+}
+/*4K*/
+@media (min-width: 2560px)
+{
+    
 }
