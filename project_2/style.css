@@ -1,14 +1,20 @@
 @keyframes change_color {
-  from {color: #97b3d3;}
-  to {color: aquamarine;}
-}
+    from {
+        color: #97b3d3;
+    }
 
+    to {
+        color: aquamarine;
+    }
+}
+  html, body {
+   scroll-behavior: smooth;
+  }
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     background: #0f172a;
     color: #dfdfdf;
-    /* svetlý text */
 }
 
 section {
@@ -114,7 +120,7 @@ nav a {
     grid-column: 1;
     grid-row: 2;
     padding: 0 1vw 1vw;
-    max-width: 80%;
+    max-width: 50%;
 }
 
 #school {
@@ -124,35 +130,40 @@ nav a {
 }
 
 #school h2 {
-    padding: 1vw 0;
+    padding-top: 1vw;
     text-align: center;
     margin: 0;
     grid-area: h2;
 }
+#school div p {
+    grid-area: text;
+    margin: 0;
+    padding: 0 1vw 0 0;
+}
 
-#school p {
+#school div p:first-of-type, #school div p:nth-of-type(3) {
     text-align: center;
     margin: 0;
-    padding: 0.5vw 0;
+    padding: 0 18vw 0 0;
 }
 
 #school div {
-    align-items: center;
+    align-items: start;
     margin: 0 auto;
     display: grid;
     grid-template-areas: "nad nad" "text img";
-    padding: 0 1vw 1vw;
-    max-width: 80%;
+        max-width: 60%;
 }
 
 #school div p:first-child {
     grid-area: nad;
+    align-self: end;
     font-weight: bold;
     font-size: 120%;
 }
 
-#school div P:last-child {
-    grid-area: text;
+#school div img:last-of-type {
+    padding-bottom: 2vw;
 }
 
 #school div img {
@@ -172,6 +183,10 @@ nav a {
     display: grid;
     width: 80%;
     margin: 0 auto;
+    /* This allows the second row to shrink below the image's original size */
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
 }
 
 #projects #sch-p h2 {
@@ -180,14 +195,14 @@ nav a {
 
 #projects .project:nth-child(2n-1) {
     grid-template-areas: "h3 h3" "img txt";
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: stretch;
     margin: 0 auto;
 }
 
 #projects .project:nth-child(2n) {
     grid-template-areas: "h3 h3" "txt img";
-    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    margin: 0 auto;
 }
 
 .project h3 {
@@ -195,35 +210,113 @@ nav a {
     text-align: center;
 }
 
+#projects .project:nth-child(2n-1) img {
+    justify-self: right;
+}
+
+#projects .project:nth-child(2n) img {
+    justify-self: left;
+}
+
 .project img {
     grid-area: img;
-    max-width: 50%;
-    justify-self: left;
-    padding-left: 10%;
+    width: 100%;
+    /* Forces image to fill the grid cell, not define it */
+    height: 100%; 
+    /* Breaking the 'intrinsic size' barrier */
+    min-height: 0; 
+    /* Ensures the code snippet/diagram doesn't get squished */
+    object-fit: contain; 
+    
+    padding: 0 5%;
     align-self: center;
 }
 
 .project p {
     grid-area: txt;
+    margin: 0;
+    display: flex;
+    align-items: center;  
 }
-#kontakt
+
+.project .text {
+    grid-area: txt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#projects #TD
 {
+    grid-template-areas: "h3 h3" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
+}
+#TD h3
+{
+    grid-area: h3;
+}
+#TD p:first-of-type
+{
+    grid-area: t1;
+}
+#TD img:first-of-type
+{
+    grid-area: i1;
+}
+#TD p:nth-of-type(2)
+{
+    grid-area: t2;
+}
+#TD img:nth-of-type(2)
+{
+    grid-area: i2;
+}
+#TD p:nth-of-type(3)
+{
+    grid-area: t3;
+    padding: 2vw 0;
+}
+#TD p:nth-of-type(4)
+{
+    grid-area: t4;
+    padding: 0  0 2vw 0;
+}
+#TD img:nth-of-type(3)
+{
+    grid-area: i4;
+    padding: 0  0 2vw 0;
+}
+
+#skills{
+    margin-top: 2vw;
+    padding: 2rem;
+}
+#skills ul {
+  list-style:decimal;
+}
+#skills li{
+    padding: 7px 0 0 0;
+}
+
+#kontakt {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    margin-top: 2vw;
 }
-#kontakt h2{
+
+#kontakt h2 {
     margin: 0;
 }
-#kontakt p
-{
+
+#kontakt p {
     margin: 0.5%;
 }
-#kontakt a{
+
+#kontakt a {
     text-decoration: none;
     color: #97b3d3;
 }
-#kontakt a:hover{
+
+#kontakt a:hover {
     animation-name: change_color;
     animation-duration: 1s;
     color: aquamarine;
@@ -245,6 +338,3 @@ nav a {
 
 /*PC*/
 @media (min-width: 1024px) {}
-
-/*4K*/
-@media (min-width: 2560px) {}
