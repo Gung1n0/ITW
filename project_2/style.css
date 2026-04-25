@@ -7,9 +7,12 @@
         color: aquamarine;
     }
 }
-  html, body {
-   scroll-behavior: smooth;
-  }
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
@@ -135,13 +138,15 @@ nav a {
     margin: 0;
     grid-area: h2;
 }
+
 #school div p {
     grid-area: text;
     margin: 0;
     padding: 0 1vw 0 0;
 }
 
-#school div p:first-of-type, #school div p:nth-of-type(3) {
+#school div p:first-of-type,
+#school div p:nth-of-type(3) {
     text-align: center;
     margin: 0;
     padding: 0 18vw 0 0;
@@ -152,7 +157,7 @@ nav a {
     margin: 0 auto;
     display: grid;
     grid-template-areas: "nad nad" "text img";
-        max-width: 60%;
+    max-width: 60%;
 }
 
 #school div p:first-child {
@@ -222,12 +227,12 @@ nav a {
     grid-area: img;
     width: 100%;
     /* Forces image to fill the grid cell, not define it */
-    height: 100%; 
+    height: 100%;
     /* Breaking the 'intrinsic size' barrier */
-    min-height: 0; 
+    min-height: 0;
     /* Ensures the code snippet/diagram doesn't get squished */
-    object-fit: contain; 
-    
+    object-fit: contain;
+
     padding: 0 5%;
     align-self: center;
 }
@@ -236,7 +241,7 @@ nav a {
     grid-area: txt;
     margin: 0;
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 
 .project .text {
@@ -245,54 +250,56 @@ nav a {
     flex-direction: column;
     justify-content: center;
 }
-#projects #TD
-{
+
+#projects #TD {
     grid-template-areas: "h3 h3" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
 }
-#TD h3
-{
+
+#TD h3 {
     grid-area: h3;
 }
-#TD p:first-of-type
-{
+
+#TD p:first-of-type {
     grid-area: t1;
 }
-#TD img:first-of-type
-{
+
+#TD img:first-of-type {
     grid-area: i1;
 }
-#TD p:nth-of-type(2)
-{
+
+#TD p:nth-of-type(2) {
     grid-area: t2;
 }
-#TD img:nth-of-type(2)
-{
+
+#TD img:nth-of-type(2) {
     grid-area: i2;
 }
-#TD p:nth-of-type(3)
-{
+
+#TD p:nth-of-type(3) {
     grid-area: t3;
     padding: 2vw 0;
 }
-#TD p:nth-of-type(4)
-{
+
+#TD p:nth-of-type(4) {
     grid-area: t4;
-    padding: 0  0 2vw 0;
-}
-#TD img:nth-of-type(3)
-{
-    grid-area: i4;
-    padding: 0  0 2vw 0;
+    padding: 0 0 2vw 0;
 }
 
-#skills{
+#TD img:nth-of-type(3) {
+    grid-area: i4;
+    padding: 0 0 2vw 0;
+}
+
+#skills {
     margin-top: 2vw;
     padding: 2rem;
 }
+
 #skills ul {
-  list-style:decimal;
+    list-style: decimal;
 }
-#skills li{
+
+#skills li {
     padding: 7px 0 0 0;
 }
 
