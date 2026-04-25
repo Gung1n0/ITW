@@ -1,3 +1,8 @@
+@keyframes change_color {
+  from {color: #97b3d3;}
+  to {color: aquamarine;}
+}
+
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
@@ -33,6 +38,22 @@ nav a {
     text-decoration: none;
     font-style: italic;
     color: white;
+}
+
+.show {
+    display: flex;
+    text-align: center;
+    margin: 0.5rem 4rem;
+    justify-content: center;
+    position: fixed;
+    top: -1%;
+    left: 0;
+    background: #0f172a;
+    padding-top: 1vw;
+    height: 3%;
+    z-index: 999;
+    width: 100%;
+    margin: 0;
 }
 
 #home {
@@ -150,6 +171,7 @@ nav a {
 #projects .project {
     display: grid;
     width: 80%;
+    margin: 0 auto;
 }
 
 #projects #sch-p h2 {
@@ -158,12 +180,14 @@ nav a {
 
 #projects .project:nth-child(2n-1) {
     grid-template-areas: "h3 h3" "img txt";
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     margin: 0 auto;
 }
 
 #projects .project:nth-child(2n) {
     grid-template-areas: "h3 h3" "txt img";
+    grid-template-columns: 1fr 1fr;
 }
 
 .project h3 {
@@ -173,10 +197,36 @@ nav a {
 
 .project img {
     grid-area: img;
+    max-width: 50%;
+    justify-self: left;
+    padding-left: 10%;
+    align-self: center;
 }
 
 .project p {
     grid-area: txt;
+}
+#kontakt
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+#kontakt h2{
+    margin: 0;
+}
+#kontakt p
+{
+    margin: 0.5%;
+}
+#kontakt a{
+    text-decoration: none;
+    color: #97b3d3;
+}
+#kontakt a:hover{
+    animation-name: change_color;
+    animation-duration: 1s;
+    color: aquamarine;
 }
 
 /*phone*/
