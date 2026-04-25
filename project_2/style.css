@@ -188,9 +188,6 @@ nav a {
     display: grid;
     width: 80%;
     margin: 0 auto;
-    /* This allows the second row to shrink below the image's original size */
-    grid-template-rows: auto minmax(0, 1fr);
-    grid-template-columns: 1fr 1fr;
     align-items: stretch;
 }
 
@@ -226,11 +223,8 @@ nav a {
 .project img {
     grid-area: img;
     width: 100%;
-    /* Forces image to fill the grid cell, not define it */
     height: 100%;
-    /* Breaking the 'intrinsic size' barrier */
     min-height: 0;
-    /* Ensures the code snippet/diagram doesn't get squished */
     object-fit: contain;
 
     padding: 0 5%;
