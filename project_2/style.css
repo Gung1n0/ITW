@@ -66,28 +66,67 @@ nav a{
     grid-area: text;
     padding-bottom: 1vw;
 }
-#profile
+#profile {
+  margin-top: 2vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+#profile h2 {
+  padding: 1vw 0;
+  text-align: center;
+  margin: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#profile p {
+  text-align: center;
+  margin: 0 auto;
+  grid-column: 1;
+  grid-row: 2;
+  padding: 0 1vw 1vw;
+  max-width: 80%;
+}
+#school
 {
     margin-top: 2vw;
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 2;
+    display: flex;
+    flex-direction: column;
 }
-#profile h2
-{
-    padding: 1vw 0;
+
+#school h2 {
+  padding: 1vw 0;
+  text-align: center;
+  margin: 0;
+  grid-area: h2;
+}
+#school p{
     text-align: center;
     margin: 0;
-    grid-column: 1;
-    grid-row: 1;
+    padding: 0.5vw 0;
 }
-#profile p
-{
-    margin: 0;
-    grid-column: 1;
-    grid-row: 2;
-    padding: 0 1VW 1vw;
-    max-width: 80%;
+#school div{
+  align-items: center;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "nad nad" "text img";
+  padding: 0 1vw 1vw;
+  max-width: 80%;
+}
+#school div p:first-child{
+grid-area: nad;
+font-weight: bold;
+font-size: 120%;
+}
+#school div P:last-child{
+grid-area: text;
+}
+#school div img{
+grid-area: img;
+max-width: 50%;
+max-height: 120%;
 }
 /*phone*/
 @media (min-width: 320px)
