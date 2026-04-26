@@ -4,8 +4,34 @@
     }
 
     to {
-        color: aquamarine;
+        color: #7fffd4;
     }
+}
+a:hover {
+    animation-name: change_color;
+    animation-duration: 1s;
+    color: aquamarine;
+}
+
+img {
+    mix-blend-mode: lighten;
+}
+#ius_above, #td_above{
+    background: #99b6de;
+    background: radial-gradient(circle,rgba(214, 231, 252, 0.8) 40%,rgb(128, 174, 238) 100%);
+    overflow:hidden;
+}
+img.IUS{
+    mix-blend-mode: multiply;
+}
+#TD div img
+{
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    padding: 0;
+}
+#td_above{
+    margin: 0 2vw;
 }
 
 html,
@@ -248,17 +274,20 @@ nav a {
 #projects #TD {
     grid-template-areas: "h3 h3" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
 }
-
 #TD h3 {
     grid-area: h3;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 #TD p:first-of-type {
     grid-area: t1;
+    height: 10vw;
 }
 
 #TD img:first-of-type {
     grid-area: i1;
+    height: 10vw;
 }
 
 #TD p:nth-of-type(2) {
@@ -279,9 +308,9 @@ nav a {
     padding: 0 0 2vw 0;
 }
 
-#TD img:nth-of-type(3) {
+#TD #td_above img:nth-of-type(3) {
     grid-area: i4;
-    padding: 0 0 2vw 0;
+    margin: 0 0 2vw 0;
 }
 
 #skills {
@@ -315,12 +344,6 @@ nav a {
 #kontakt a {
     text-decoration: none;
     color: #97b3d3;
-}
-
-#kontakt a:hover {
-    animation-name: change_color;
-    animation-duration: 1s;
-    color: aquamarine;
 }
 
 /*phone*/
