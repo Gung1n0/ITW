@@ -312,6 +312,12 @@ grid-template-areas: "nad nad" "img text";
     flex-direction: column;
     justify-content: center;
 }
+.project a{
+    grid-area: img;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
 
 #projects #TD {
     grid-template-areas: "h3 h3" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
@@ -362,6 +368,12 @@ grid-template-areas: "nad nad" "img text";
 #TD .td_above:has(img[src$="moje3.png"]) {
     grid-area: i4;
     margin: 0 0 2vw 0;
+}
+#TD a{
+    grid-area: t4;
+    align-self:flex-end;
+    justify-self: center;
+    padding-bottom:10% ;
 }
 
 #skills {
