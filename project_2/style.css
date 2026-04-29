@@ -513,16 +513,25 @@ nav a {
     background-color: black;
 }
 
-/*phone*/
-@media (max-width: 767px) {
-    html {
-        font-size: 80%;
+/*phone + tablet*/
+@media (max-width: 1024px) {
+
+    html,
+    body {
+        font-size: 90%;
+        overflow-x: hidden;
     }
 
     nav {
+        font-size: 85%;
         padding-left: 5%;
         justify-content: center;
         gap: 3%;
+        max-width: 100%;
+    }
+
+    nav a {
+        padding-top: 2%;
     }
 
     .show {
@@ -532,7 +541,7 @@ nav a {
 
     #home h2,
     #home h3 {
-        font-size: 120%;
+        font-size: 100%;
     }
 
     #home {
@@ -548,8 +557,9 @@ nav a {
     }
 
     #home h1 {
-        padding-left: 5%;
+        padding-left: 4.5%;
         order: 2;
+        font-size: 300%;
     }
 
     #home p {
@@ -600,10 +610,12 @@ nav a {
 
     #projects h1 {
         padding: 0 0 0 5%;
+        font-size: 200%;
     }
 
     #projects h2 {
         padding: 0 0 0 5%;
+        font-size: 150%;
     }
 
     #projects .project {
@@ -623,49 +635,155 @@ nav a {
         order: 0;
     }
 
-    .project img{
+    .project img {
         order: 2;
     }
+
     .project a {
         order: 3;
         align-self: center;
         padding: 2% 0;
     }
-    #projects .nad_project h2{
+
+    #projects .nad_project h2 {
         padding-top: 1rem;
+        white-space: wrap;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
     }
-    #ius_above{
+
+    #ius_above {
         max-height: 50vh;
         width: auto;
         margin-bottom: 2%;
     }
-    #ius_above img{
+
+    #ius_above img {
         max-height: 50vh;
-            object-fit: cover;
+        object-fit: cover;
     }
-    .ios{
-        max-height: 50vh;
-    }
-    #smt
-    {
+
+    .ios {
         max-height: 50vh;
     }
-    #pers-p, #TD
-    {
+
+    #smt {
+        max-height: 50vh;
+    }
+
+    #pers-p,
+    #TD {
         display: flex;
         flex-direction: column;
     }
-    #TD img,#TD h2,#TD p, #TD a{
-        order: 0;
+
+    #TD p:first-of-type {
+        height: auto;
     }
-    #kontakt{
+
+    .td_above {
+        margin: 5% 0;
+    }
+
+    #TD img,
+    #TD h2,
+    #TD p,
+    #TD a {
+        order: 0;
+        padding: 5% 0;
+    }
+
+    #TD a {
+        justify-self: center;
+        align-self: center;
+    }
+
+    #skills {
+        padding: 0;
+        margin: 0;
+    }
+
+    #skills h2 {
+        padding: 0 0 0 5%;
+    }
+
+    #kontakt {
         padding: 0;
     }
 }
 
-/*Tablet*/
-@media (min-width: 768px) {
-    nav {
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    html,
+    body {
         font-size: 100%;
+    }
+}
+
+@media (max-width: 1240px) {
+    #school div {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    #school h2 {
+        padding-left: 5%;
+    }
+
+    #school div p {
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    #school div p:first-of-type {
+        align-self: center;
+    }
+
+    #school div:first-of-type p:nth-of-type(1) {
+        padding: 0 0 1%;
+    }
+
+    #school div:last-of-type p:nth-of-type(1) {
+        padding: 0 0 1% 0;
+    }
+
+    #sch-p div:nth-last-of-type(2),#projects .project:nth-of-type(2), #sch-p div:nth-of-type(3) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sch-p div:nth-last-of-type(2) h3,#sch-p div:nth-of-type(2) h3 ,#sch-p div:nth-of-type(3) h3{
+        order: 1;
+        padding-top: 4%;
+        padding-bottom: 0;
+        align-self: center;
+    }
+
+    #sch-p div:nth-last-of-type(2) p, #sch-p div:nth-of-type(2) p,#sch-p div:nth-of-type(3) p{
+        order: 2;
+        padding-top: 4%;
+    }
+
+    #sch-p div:nth-last-of-type(2) img, #sch-p div:nth-of-type(2) img,#sch-p div:nth-of-type(3) img {
+        order: 3;
+        padding-top: 4%;
+    }
+
+    #sch-p div:nth-last-of-type(2) a, #sch-p div:nth-of-type(2) a,#sch-p div:nth-child(3) a{
+        order: 4;
+        padding-top: 4%;
+        align-self: center;
+    }
+    .project{
+        padding-bottom: 5%;
+    }
+    #TD p:first-of-type {
+    height: auto;
+    }
+    #TD p{
+        padding-bottom: 5%;
     }
 }
