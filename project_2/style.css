@@ -7,14 +7,17 @@
         color: rgb(56, 189, 248);
     }
 }
+
 @keyframes change_opacity {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
+
 a:hover {
     animation-name: change_color;
     animation-duration: 1s;
@@ -24,37 +27,43 @@ a:hover {
 img {
     mix-blend-mode: lighten;
 }
-#ius_above, .td_above{
+
+#ius_above,
+.td_above {
     background: #99b6de;
-    background: radial-gradient(circle,rgba(214, 231, 252, 0.8) 40%,rgb(128, 174, 238) 100%);
-    overflow:hidden;
+    background: radial-gradient(circle, rgba(214, 231, 252, 0.8) 40%, rgb(128, 174, 238) 100%);
+    overflow: hidden;
 }
-#ius_above{
+
+#ius_above {
     grid-area: img;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60%;
 }
-#ius_above img{
+
+#ius_above img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-img.IUS{
+
+img.IUS {
     mix-blend-mode: multiply;
 }
-#TD .td_above img
-{
-    mix-blend-mode:multiply;
+
+#TD .td_above img {
+    mix-blend-mode: multiply;
     object-fit: cover;
     padding: 0;
-        width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.td_above{
+
+.td_above {
     margin: 0 2vw;
 }
 
@@ -92,6 +101,7 @@ nav {
     justify-content: right;
     gap: 20px;
     padding-top: 1%;
+    white-space: nowrap
 }
 
 nav a {
@@ -106,13 +116,15 @@ nav a {
     justify-content: center;
     vertical-align: bottom;
 }
-#home div{
+
+#home div {
     display: flex;
 }
 
 #home p,
 #home h2,
-#home h3, #home h1 {
+#home h3,
+#home h1 {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0.5vw 1vw;
@@ -179,9 +191,9 @@ nav a {
 #school h2 {
     padding-top: 1vw;
     margin: 0;
-    align-self:flex-start;
+    align-self: flex-start;
     padding-left: 24%;
-       font-size: 200%;
+    font-size: 200%;
 }
 
 #school div p {
@@ -196,21 +208,23 @@ nav a {
     margin: 0;
     padding: 0 18vw 0 0;
 }
+
 #school div:last-of-type p:nth-of-type(1) {
     text-align: center;
     margin: 0;
     padding: 0 0 0 18vw;
 }
-#school div{
+
+#school div {
     align-items: start;
     margin: 0 auto;
     display: grid;
     grid-template-areas: "nad nad" "text img";
     max-width: 50%;
 }
-#school div:last-of-type
-{
-grid-template-areas: "nad nad" "img text";
+
+#school div:last-of-type {
+    grid-template-areas: "nad nad" "img text";
 }
 
 #school div p:first-child {
@@ -230,6 +244,7 @@ grid-template-areas: "nad nad" "img text";
     justify-self: start;
     align-self: center;
 }
+
 #school div:last-of-type img {
     align-self: center;
     justify-self: end;
@@ -242,16 +257,19 @@ grid-template-areas: "nad nad" "img text";
     flex-direction: column;
     align-items: center;
 }
-#projects h1{
+
+#projects h1 {
     margin: 1rem 0 0;
     align-self: flex-start;
     padding-left: 14%;
 }
-#projects h2{
+
+#projects h2 {
     font-size: 250%;
     padding-left: 14%;
     align-self: flex-start;
 }
+
 #projects .project {
     display: grid;
     width: 80%;
@@ -263,18 +281,20 @@ grid-template-areas: "nad nad" "img text";
     align-self: center;
     justify-self: center;
     margin: 0;
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
-#projects .nad_project h2{
+
+#projects .nad_project h2 {
     margin: 0;
     white-space: nowrap;
     align-self: center;
     justify-self: center;
     font-size: 200%;
 }
-.nad_project h2:last-of-type{
-        animation-name: change_opacity;
+
+.nad_project h2:last-of-type {
+    animation-name: change_opacity;
     animation-duration: 1s;
 }
 
@@ -313,10 +333,10 @@ grid-template-areas: "nad nad" "img text";
 
 .project img {
     grid-area: img;
-        width: 80%;
+    width: 80%;
     height: 80%;
     min-height: 0;
-    object-fit:contain;
+    object-fit: contain;
     padding: 0 5%;
     align-self: center;
 }
@@ -337,7 +357,8 @@ grid-template-areas: "nad nad" "img text";
     flex-direction: column;
     justify-content: center;
 }
-.project a{
+
+.project a {
     grid-area: img;
     text-align: center;
     color: white;
@@ -345,24 +366,33 @@ grid-template-areas: "nad nad" "img text";
     align-self: flex-end;
 }
 
-#projects #TD {
-    grid-template-areas: "h2 h2" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
+#pers-p {
     justify-content: center;
     align-items: center;
-    margin: 0 2rem;
 }
+
+#projects #TD {
+    grid-template-areas: "h2 h2" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
+
+    margin: 0 2rem;
+    align-self: center;
+    justify-self: center;
+}
+
 #TD h2 {
     grid-area: h2;
     font-weight: bold;
     font-size: 150%;
 }
-.td_above{
+
+.td_above {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80%;
     width: 80%;
 }
+
 #TD p {
     margin: 0;
     display: flex;
@@ -371,12 +401,13 @@ grid-template-areas: "nad nad" "img text";
     text-align: justify;
     min-height: 0;
 }
+
 #TD p:first-of-type {
     grid-area: t1;
     height: 10vw;
 }
- 
-#TD  img:nth-of-type(2) {
+
+#TD img:nth-of-type(2) {
     grid-area: i1;
     height: 10vw;
 }
@@ -402,11 +433,12 @@ grid-template-areas: "nad nad" "img text";
 #TD .td_above:has(img[src$="moje3.png"]) {
     grid-area: i4;
 }
-#TD a{
+
+#TD a {
     grid-area: t4;
-    align-self:flex-end;
+    align-self: flex-end;
     justify-self: center;
-    padding-bottom:10%;
+    padding-bottom: 10%;
 }
 
 #skills {
@@ -415,7 +447,8 @@ grid-template-areas: "nad nad" "img text";
     display: flex;
     flex-direction: column;
 }
-#skills h2{
+
+#skills h2 {
     padding-left: 14%;
     font-size: 200%;
 }
@@ -454,16 +487,19 @@ grid-template-areas: "nad nad" "img text";
     text-decoration: none;
     color: #97b3d3;
 }
+
 /*apearing dynamic classes*/
-.hidden{
+.hidden {
     display: none;
     opacity: 0;
     font-size: 0;
 }
-.anim_fade{
+
+.anim_fade {
     animation: change_opacity;
     animation-duration: 1s;
 }
+
 .show {
     display: flex;
     justify-content: right;
@@ -478,9 +514,152 @@ grid-template-areas: "nad nad" "img text";
 }
 
 /*phone*/
-@media (min-width: 320px) {
+@media (max-width: 767px) {
+    html {
+        font-size: 80%;
+    }
+
     nav {
-        font-size: 60%;
+        padding-left: 5%;
+        justify-content: center;
+        gap: 3%;
+    }
+
+    .show {
+        justify-content: center;
+        right: 0;
+    }
+
+    #home h2,
+    #home h3 {
+        font-size: 120%;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #home div {
+        order: 1;
+        padding-left: 5%;
+    }
+
+    #home h1 {
+        padding-left: 5%;
+        order: 2;
+    }
+
+    #home p {
+        max-width: 100%;
+        order: 3;
+    }
+
+    #profile h2 {
+        padding: 1vw 0 1vw 5%;
+        text-align: left;
+    }
+
+    #profile p {
+        max-width: 100%;
+    }
+
+    #school div {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    #school h2 {
+        padding-left: 5%;
+    }
+
+    #school div p {
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    #school div p:first-of-type {
+        align-self: center;
+    }
+
+    #school div:first-of-type p:nth-of-type(1) {
+        padding: 0 0 1%;
+    }
+
+    #school div:last-of-type p:nth-of-type(1) {
+        padding: 0 0 1% 0;
+    }
+
+    #projects {
+        margin: 0;
+    }
+
+    #projects h1 {
+        padding: 0 0 0 5%;
+    }
+
+    #projects h2 {
+        padding: 0 0 0 5%;
+    }
+
+    #projects .project {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project p {
+        padding: 0 0 2%;
+        order: 1;
+    }
+
+    .project h3 {
+        align-self: center;
+        padding: 2% 0 2%;
+        order: 0;
+    }
+
+    .project img{
+        order: 2;
+    }
+    .project a {
+        order: 3;
+        align-self: center;
+        padding: 2% 0;
+    }
+    #projects .nad_project h2{
+        padding-top: 1rem;
+    }
+    #ius_above{
+        max-height: 50vh;
+        width: auto;
+        margin-bottom: 2%;
+    }
+    #ius_above img{
+        max-height: 50vh;
+            object-fit: cover;
+    }
+    .ios{
+        max-height: 50vh;
+    }
+    #smt
+    {
+        max-height: 50vh;
+    }
+    #pers-p, #TD
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    #TD img,#TD h2,#TD p, #TD a{
+        order: 0;
+    }
+    #kontakt{
+        padding: 0;
     }
 }
 
@@ -490,6 +669,3 @@ grid-template-areas: "nad nad" "img text";
         font-size: 100%;
     }
 }
-
-/*PC*/
-@media (min-width: 1024px) {}
