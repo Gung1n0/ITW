@@ -69,7 +69,7 @@
             <h2>Školské projekty</h2>
             <section id="sch-p">
                 <h2>IZP - Základy programování</h2>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>Keyfilter</h3>
                     <p>V tomto projekte sme sa zoznámili s jazykom C, cielom tohto projektu bolo implementuje systém
                         automatického dopĺňania adries, podobne ako automatického dopĺňania textu.
@@ -91,7 +91,7 @@
                         naviguje k platnému cieľu.</p>
                     <img src="./img/keyfilter.png" alt="">
                 </div>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>Práca s dynamickou pamäťou</h3>
                     <p>Tento program implementuje hierarchické zhlukovanie sieťových tokov (Agglomerative Clustering) na
                         základe ich vlastností.
@@ -111,7 +111,7 @@
                     <img src="./img/dynam_mem.png" alt="">
                 </div>
                 <h2>IUS - Úvod do softwarového inženýrství</h2>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>Rejstřík církví</h3>
                     <p>V tomto projekte som navrhoval ER diagram databázového systému RECESE pre Ministerstvo kultury.
                         Identifikoval som hlavné entity systému — cirkev, osobu, štatutárny orgán, predpis a ustanovenie
@@ -129,7 +129,7 @@
                         <img src="./img/cirkve.png" class="IUS" alt="">
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3> Upíří krevní banka </h3>
                     <p>Tento projekt bol týmoví, a v tomto projekte sme navrhovali informačný systém pre upírskú krvnú
                         banku. Identifikovali sa
@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <h2>IOS - Operační systémy</h2>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>Wana</h3>
                     <p>V tomto projekte som implementoval shell skript na analýzu a filtrovanie záznamov webového
                         servera. Skript dokáže spracovávať logy zo súborov aj zo štandardného vstupu, pričom podporuje
@@ -161,7 +161,7 @@
                         nemodifikoval vstupné dáta.</p>
                     <img src="./img/ios1.png" alt="">
                 </div>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>Horská dráha</h3>
                     <p>V tomto projekte som implementoval simuláciu horskej dráhy pomocou procesov a semaforov v jazyku
                         C. Vytváral som tri typy procesov — dispečera, vozíky a návštevníkov — ktoré bežali súbežne a
@@ -175,7 +175,7 @@
                     <img src="./img/ios2.png" alt="">
                 </div>
                 <h2>IZLO - Základy logiky pro informatiky</h2>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>SAT solvery</h3>
                     <p>V tomto projekte som implementoval kódovanie plánu opráv mesta do výrokovej logiky pomocou SAT
                         solvera. Problém bol zadaný ako neorientovaný graf, kde uzly reprezentovali križovatky a hrany
@@ -195,7 +195,7 @@
                     </p>
                     <img src="./img/izlo1.png" alt="">
                 </div>
-                <div class="project">
+                <div class="project" class="fade">
                     <h3>SMT solvery</h3>
                     <p>V tomto projekte som formalizoval detekciu deadlocku v operačnom systéme pomocou SMT solvera v
                         jazyku
@@ -216,37 +216,45 @@
             <h2>Osobné projekty</h2>
             <section id="pers-p"></section>
             <div class="project" id="TD">
-                <h3>Unity TD hra</h3>
-                <p>V tomto projekte som vytváral 2D Tower Defense hru v hernom engine Unity.
-                    Tému som si vybrali kvôli spoločnému záujmu o programovanie a videohry, pričom ma
-                    konkrétne fascinoval žáner tower defense a výzva spojenou s vyvážením herných mechaník.
-                    Hra bola vyvíjaná v jazyku C#, s ktorým som mal predošlé skúsenosti, a celý projekt bol realizovaný
-                    v 2D prostredí, čo nmi umožnilo sústrediť sa na hernú mechaniku a vizuálnu stránku bez zbytočnej
-                    komplexity 3D vývoja. Navrhol som herné prostredie vrátane rozmiestnenia miest pre veže a trasy, po
-                    ktorej sa pohybujú nepriatelia.</p>
-                <img src="./img/moje1.png" alt="">
-
-                <p>Implementoval som 5 typov obranných veží, pričom každá mala 3 vývojové štádiá s unikátnou grafikou
-                    a vlastnosťami. Každé vylepšenie veže sa vizuálne odlišovalo a prinášalo nové schopnosti. Súčasťou
-                    hry je tiež 5 typov nepriateľov, kde každý má rozdielne vlastnosti a rôznu mieru poškodenia hráča.
-                    Pre hráča som vytvoril 2 špeciálne schopnosti s rôznym časom obnovy a parametrami, aby hra zostala
-                    vybalansovaná.</p>
-                <div id="td_above">
-                    <img src="./img/moje2.png" alt="">
-                </div>
-                <p>Kľúčovou súčasťou bola implementácia ekonomického systému — hráč začína s obmedzeným množstvom
-                    hernej meny, za zabitých nepriateľov získava odmeny a tie investuje do vylepšovania veží. Tento
-                    systém núti hráča strategicky premýšľať o každom rozhodnutí.</p>
-
-                <p>Celú grafiku som tvoril vlastnými silami s využitím generatívnej umelej inteligencie, čo mi
-                    umožnilo vytvoriť vizuálne prívetivý a unikátny štýl pre veže, nepriateľov, pozadie aj schopnosti.
-                    Hra bola taktiež ozvučená — pridal som hudobné pozadie, zvukové efekty pre schopnosti aj akcie
-                    veží. Na opätovné hranie motivuje hráčov implementovaný multiplayer mód. Projekt nám priniesol
-                    skúsenosti s riešením špecifických programátorských problémov, s ktorými som sa predtým nestretol, a
-                    výrazne mi rozšíril znalosti v oblasti herného vývoja.</p>
-                <div id="td_above">
-                    <img src="./img/moje3.png" alt="">
-                </div>
+                    <h3>Unity TD hra</h3>
+                    <p>V tomto projekte som vytváral 2D Tower Defense hru v hernom engine Unity.
+                        Tému som si vybrali kvôli spoločnému záujmu o programovanie a videohry, pričom ma
+                        konkrétne fascinoval žáner tower defense a výzva spojenou s vyvážením herných mechaník.
+                        Hra bola vyvíjaná v jazyku C#, s ktorým som mal predošlé skúsenosti, a celý projekt bol
+                        realizovaný
+                        v 2D prostredí, čo nmi umožnilo sústrediť sa na hernú mechaniku a vizuálnu stránku bez zbytočnej
+                        komplexity 3D vývoja. Navrhol som herné prostredie vrátane rozmiestnenia miest pre veže a trasy,
+                        po
+                        ktorej sa pohybujú nepriatelia.</p>
+                    <div class="td_above">
+                        <img src="./img/moje1.png" alt="">
+                    </div>
+                    <p>Implementoval som 5 typov obranných veží, pričom každá mala 3 vývojové štádiá s unikátnou
+                        grafikou
+                        a vlastnosťami. Každé vylepšenie veže sa vizuálne odlišovalo a prinášalo nové schopnosti.
+                        Súčasťou
+                        hry je tiež 5 typov nepriateľov, kde každý má rozdielne vlastnosti a rôznu mieru poškodenia
+                        hráča.
+                        Pre hráča som vytvoril 2 špeciálne schopnosti s rôznym časom obnovy a parametrami, aby hra
+                        zostala
+                        vybalansovaná.</p>
+                    <div class="td_above">
+                        <img src="./img/moje2.png" alt="">
+                    </div>
+                    <p>Kľúčovou súčasťou bola implementácia ekonomického systému — hráč začína s obmedzeným množstvom
+                        hernej meny, za zabitých nepriateľov získava odmeny a tie investuje do vylepšovania veží. Tento
+                        systém núti hráča strategicky premýšľať o každom rozhodnutí.</p>
+                    <p>Celú grafiku som tvoril vlastnými silami s využitím generatívnej umelej inteligencie, čo mi
+                        umožnilo vytvoriť vizuálne prívetivý a unikátny štýl pre veže, nepriateľov, pozadie aj
+                        schopnosti.
+                        Hra bola taktiež ozvučená — pridal som hudobné pozadie, zvukové efekty pre schopnosti aj akcie
+                        veží. Na opätovné hranie motivuje hráčov implementovaný multiplayer mód. Projekt nám priniesol
+                        skúsenosti s riešením špecifických programátorských problémov, s ktorými som sa predtým
+                        nestretol, a
+                        výrazne mi rozšíril znalosti v oblasti herného vývoja.</p>
+                    <div class="td_above">
+                        <img src="./img/moje3.png" alt="">
+                    </div>
             </div>
         </section>
         <section id="skills">
@@ -276,6 +284,7 @@
         </section>
     </footer>
     <script src="nav_scroll.js"></script>
+    <script src="fade.js"></script>
 </body>
 
 </html>

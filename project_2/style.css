@@ -16,7 +16,7 @@ a:hover {
 img {
     mix-blend-mode: lighten;
 }
-#ius_above, #td_above{
+#ius_above, .td_above{
     background: #99b6de;
     background: radial-gradient(circle,rgba(214, 231, 252, 0.8) 40%,rgb(128, 174, 238) 100%);
     overflow:hidden;
@@ -24,13 +24,16 @@ img {
 img.IUS{
     mix-blend-mode: multiply;
 }
-#TD div img
+#TD .td_above img
 {
-    mix-blend-mode: multiply;
+    mix-blend-mode:multiply;
     object-fit: cover;
     padding: 0;
+        width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-#td_above{
+.td_above{
     margin: 0 2vw;
 }
 
@@ -120,6 +123,7 @@ nav a {
 
 #home h3 {
     grid-area: h3;
+    align-self: center;
 }
 
 #home p {
@@ -169,6 +173,7 @@ nav a {
     grid-area: text;
     margin: 0;
     padding: 0 1vw 0 0;
+    text-align: justify;
 }
 
 #school div p:first-of-type,
@@ -183,7 +188,7 @@ nav a {
     margin: 0 auto;
     display: grid;
     grid-template-areas: "nad nad" "text img";
-    max-width: 60%;
+    max-width: 50%;
 }
 
 #school div p:first-child {
@@ -199,8 +204,8 @@ nav a {
 
 #school div img {
     grid-area: img;
-    max-width: 50%;
-    max-height: 120%;
+    max-width: 60%;
+    align-self: center;
 }
 
 #projects {
@@ -219,23 +224,28 @@ nav a {
 
 #projects #sch-p h2 {
     text-align: center;
+    margin: 0;
 }
 
 #projects .project:nth-child(2n-1) {
     grid-template-areas: "h3 h3" "img txt";
     align-items: stretch;
     margin: 0 auto;
+    grid-template-rows: minmax(50px, auto) minmax(250px auto);
 }
 
 #projects .project:nth-child(2n) {
     grid-template-areas: "h3 h3" "txt img";
     align-items: stretch;
     margin: 0 auto;
+    grid-template-rows: minmax(50px, auto) minmax(250px auto);
 }
 
 .project h3 {
     grid-area: h3;
     text-align: center;
+    align-self: center;
+    margin: 0;
 }
 
 #projects .project:nth-child(2n-1) img {
@@ -248,11 +258,10 @@ nav a {
 
 .project img {
     grid-area: img;
-    width: 100%;
-    height: 100%;
+        width: 80%;
+    height: 80%;
     min-height: 0;
-    object-fit: contain;
-
+    object-fit:contain;
     padding: 0 5%;
     align-self: center;
 }
@@ -262,6 +271,8 @@ nav a {
     margin: 0;
     display: flex;
     align-items: center;
+    padding: 0 5%;
+    text-align: justify;
 }
 
 .project .text {
@@ -273,19 +284,28 @@ nav a {
 
 #projects #TD {
     grid-template-areas: "h3 h3" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
+    justify-content: center;
+    align-items: center;
 }
 #TD h3 {
     grid-area: h3;
     font-weight: bold;
     font-size: 150%;
 }
+.td_above{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+}
 
 #TD p:first-of-type {
     grid-area: t1;
     height: 10vw;
 }
-
-#TD img:first-of-type {
+ 
+#TD  img:nth-of-type(2) {
     grid-area: i1;
     height: 10vw;
 }
@@ -294,7 +314,7 @@ nav a {
     grid-area: t2;
 }
 
-#TD img:nth-of-type(2) {
+#TD .td_above:has(img[src$="moje2.png"]) {
     grid-area: i2;
 }
 
@@ -308,7 +328,7 @@ nav a {
     padding: 0 0 2vw 0;
 }
 
-#TD #td_above img:nth-of-type(3) {
+#TD .td_above:has(img[src$="moje3.png"]) {
     grid-area: i4;
     margin: 0 0 2vw 0;
 }
