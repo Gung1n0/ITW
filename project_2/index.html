@@ -21,9 +21,11 @@
     </header>
     <main>
         <section id="home">
-            <h1>Home</h1>
-            <h2>Filip Šturák</h2>
-            <h3>Gung1n0</h3>
+            <h1>Portfolio</h1>
+            <div>
+                <h2>Filip Šturák</h2>
+                <h3>Gung1n0</h3>
+            </div>
             <p>Volám sa Filip Štuák ,venujem sa programovianiu v rôznych jazykoch so zameraním na backend
                 development. Zaujímam sa o vedu a techniku. Tento web slúži ako moja osobná prezentácia a ukážka
                 projektov, na ktorých som pracoval.</p>
@@ -68,7 +70,10 @@
             <h1>Projekty</h1>
             <h2>Školské projekty</h2>
             <section id="sch-p">
-                <h2>IZP - Základy programování</h2>
+                <div class="nad_project">
+                    <h2>IZP</h2>
+                    <h2 class="hidden">Základy programování</h2>
+                </div>
                 <div class="project" class="fade">
                     <h3>Keyfilter</h3>
                     <p>V tomto projekte sme sa zoznámili s jazykom C, cielom tohto projektu bolo implementuje systém
@@ -89,6 +94,7 @@
                         s každým zadaným znakom.
                         Celkovo program modeluje reálny prípad použitia, kde používateľ postupne píše adresu a systém ho
                         naviguje k platnému cieľu.</p>
+                    <a href="">source kód</a>
                     <img src="./img/keyfilter.png" alt="">
                 </div>
                 <div class="project" class="fade">
@@ -108,9 +114,13 @@
                         euklidovská vzdialenosť medzi vlastnosťami tokov — až kým nezostane požadovaný počet clusterov.
                         Všetka alokovaná pamäť je na konci programu uvoľnená cez funkcie array_destruct a
                         array_destruct_clusters. Výsledkom je výpis clusterov s ID tokov, ktoré do nich patria.</p>
+                    <a href="">source kód</a>
                     <img src="./img/dynam_mem.png" alt="">
                 </div>
-                <h2>IUS - Úvod do softwarového inženýrství</h2>
+                <div class="nad_project">
+                    <h2>IUS </h2>
+                    <h2 class="hidden">Úvod do softwarového inženýrství</h2>
+                </div>
                 <div class="project" class="fade">
                     <h3>Rejstřík církví</h3>
                     <p>V tomto projekte som navrhoval ER diagram databázového systému RECESE pre Ministerstvo kultury.
@@ -146,7 +156,10 @@
                         <img src="./img/krv.png" class="IUS" alt="">
                     </div>
                 </div>
-                <h2>IOS - Operační systémy</h2>
+                <div class="nad_project">
+                    <h2>IOS </h2>
+                    <h2 class="hidden">Operační systémy</h2>
+                </div>
                 <div class="project" class="fade">
                     <h3>Wana</h3>
                     <p>V tomto projekte som implementoval shell skript na analýzu a filtrovanie záznamov webového
@@ -159,6 +172,7 @@
                         histogram záťaže rozdelený do hodinových intervalov. Dbal som na to, aby skript fungoval na
                         viacerých shelloch a operačných systémoch, a aby nepoužíval žiadne dočasné súbory ani
                         nemodifikoval vstupné dáta.</p>
+                    <a href="">source kód</a>
                     <img src="./img/ios1.png" alt="">
                 </div>
                 <div class="project" class="fade">
@@ -172,9 +186,13 @@
                         striedanie nástupu a výstupu cestujúcich. Dbal som na to, aby všetky procesy pri ukončení
                         korektne uvoľnili semafory aj zdieľanú pamäť. Výstup každého procesu bol zapisovaný do súboru s
                         globálne číslovanými akciami, čo vyžadovalo ďalšiu synchronizáciu pomocou zdieľaného čítača</p>
+                    <a href="">source kód</a>
                     <img src="./img/ios2.png" alt="">
                 </div>
-                <h2>IZLO - Základy logiky pro informatiky</h2>
+                <div class="nad_project">
+                    <h2>IZLO </h2>
+                    <h2 class="hidden">Základy logiky pro informatiky</h2>
+                </div>
                 <div class="project" class="fade">
                     <h3>SAT solvery</h3>
                     <p>V tomto projekte som implementoval kódovanie plánu opráv mesta do výrokovej logiky pomocou SAT
@@ -193,6 +211,7 @@
                         problém som previedol na sústavu klauzúl, ktorú SAT solver vyhodnotil a vrátil platný plán
                         opráv.
                     </p>
+                    <a href="">source kód</a>
                     <img src="./img/izlo1.png" alt="">
                 </div>
                 <div class="project" class="fade">
@@ -210,51 +229,53 @@
                         zápise formátu SMT-LIB s využitím univerzálnych a existenčných kvantifikátorov, booleovských
                         spojok
                         a celočíselných predikátov.</p>
+                    <a href="">source kód</a>
                     <img src="./img/izlo2.png" alt="">
                 </div>
             </section>
             <h2>Osobné projekty</h2>
             <section id="pers-p"></section>
             <div class="project" id="TD">
-                    <h3>Unity TD hra</h3>
-                    <p>V tomto projekte som vytváral 2D Tower Defense hru v hernom engine Unity.
-                        Tému som si vybrali kvôli spoločnému záujmu o programovanie a videohry, pričom ma
-                        konkrétne fascinoval žáner tower defense a výzva spojenou s vyvážením herných mechaník.
-                        Hra bola vyvíjaná v jazyku C#, s ktorým som mal predošlé skúsenosti, a celý projekt bol
-                        realizovaný
-                        v 2D prostredí, čo nmi umožnilo sústrediť sa na hernú mechaniku a vizuálnu stránku bez zbytočnej
-                        komplexity 3D vývoja. Navrhol som herné prostredie vrátane rozmiestnenia miest pre veže a trasy,
-                        po
-                        ktorej sa pohybujú nepriatelia.</p>
-                    <div class="td_above">
-                        <img src="./img/moje1.png" alt="">
-                    </div>
-                    <p>Implementoval som 5 typov obranných veží, pričom každá mala 3 vývojové štádiá s unikátnou
-                        grafikou
-                        a vlastnosťami. Každé vylepšenie veže sa vizuálne odlišovalo a prinášalo nové schopnosti.
-                        Súčasťou
-                        hry je tiež 5 typov nepriateľov, kde každý má rozdielne vlastnosti a rôznu mieru poškodenia
-                        hráča.
-                        Pre hráča som vytvoril 2 špeciálne schopnosti s rôznym časom obnovy a parametrami, aby hra
-                        zostala
-                        vybalansovaná.</p>
-                    <div class="td_above">
-                        <img src="./img/moje2.png" alt="">
-                    </div>
-                    <p>Kľúčovou súčasťou bola implementácia ekonomického systému — hráč začína s obmedzeným množstvom
-                        hernej meny, za zabitých nepriateľov získava odmeny a tie investuje do vylepšovania veží. Tento
-                        systém núti hráča strategicky premýšľať o každom rozhodnutí.</p>
-                    <p>Celú grafiku som tvoril vlastnými silami s využitím generatívnej umelej inteligencie, čo mi
-                        umožnilo vytvoriť vizuálne prívetivý a unikátny štýl pre veže, nepriateľov, pozadie aj
-                        schopnosti.
-                        Hra bola taktiež ozvučená — pridal som hudobné pozadie, zvukové efekty pre schopnosti aj akcie
-                        veží. Na opätovné hranie motivuje hráčov implementovaný multiplayer mód. Projekt nám priniesol
-                        skúsenosti s riešením špecifických programátorských problémov, s ktorými som sa predtým
-                        nestretol, a
-                        výrazne mi rozšíril znalosti v oblasti herného vývoja.</p>
-                    <div class="td_above">
-                        <img src="./img/moje3.png" alt="">
-                    </div>
+                <h3>Unity TD hra</h3>
+                <p>V tomto projekte som vytváral 2D Tower Defense hru v hernom engine Unity.
+                    Tému som si vybrali kvôli spoločnému záujmu o programovanie a videohry, pričom ma
+                    konkrétne fascinoval žáner tower defense a výzva spojenou s vyvážením herných mechaník.
+                    Hra bola vyvíjaná v jazyku C#, s ktorým som mal predošlé skúsenosti, a celý projekt bol
+                    realizovaný
+                    v 2D prostredí, čo nmi umožnilo sústrediť sa na hernú mechaniku a vizuálnu stránku bez zbytočnej
+                    komplexity 3D vývoja. Navrhol som herné prostredie vrátane rozmiestnenia miest pre veže a trasy,
+                    po
+                    ktorej sa pohybujú nepriatelia.</p>
+                <div class="td_above">
+                    <img src="./img/moje1.png" alt="">
+                </div>
+                <p>Implementoval som 5 typov obranných veží, pričom každá mala 3 vývojové štádiá s unikátnou
+                    grafikou
+                    a vlastnosťami. Každé vylepšenie veže sa vizuálne odlišovalo a prinášalo nové schopnosti.
+                    Súčasťou
+                    hry je tiež 5 typov nepriateľov, kde každý má rozdielne vlastnosti a rôznu mieru poškodenia
+                    hráča.
+                    Pre hráča som vytvoril 2 špeciálne schopnosti s rôznym časom obnovy a parametrami, aby hra
+                    zostala
+                    vybalansovaná.</p>
+                <div class="td_above">
+                    <img src="./img/moje2.png" alt="">
+                </div>
+                <p>Kľúčovou súčasťou bola implementácia ekonomického systému — hráč začína s obmedzeným množstvom
+                    hernej meny, za zabitých nepriateľov získava odmeny a tie investuje do vylepšovania veží. Tento
+                    systém núti hráča strategicky premýšľať o každom rozhodnutí.</p>
+                <p>Celú grafiku som tvoril vlastnými silami s využitím generatívnej umelej inteligencie, čo mi
+                    umožnilo vytvoriť vizuálne prívetivý a unikátny štýl pre veže, nepriateľov, pozadie aj
+                    schopnosti.
+                    Hra bola taktiež ozvučená — pridal som hudobné pozadie, zvukové efekty pre schopnosti aj akcie
+                    veží. Na opätovné hranie motivuje hráčov implementovaný multiplayer mód. Projekt nám priniesol
+                    skúsenosti s riešením špecifických programátorských problémov, s ktorými som sa predtým
+                    nestretol, a
+                    výrazne mi rozšíril znalosti v oblasti herného vývoja.</p>
+                <div class="td_above">
+                    <img src="./img/moje3.png" alt="">
+                </div>
+                <a href="">source kód</a>
             </div>
         </section>
         <section id="skills">
@@ -285,6 +306,7 @@
     </footer>
     <script src="nav_scroll.js"></script>
     <script src="fade.js"></script>
+    <script src="add_text.js"></script>
 </body>
 
 </html>
