@@ -1,40 +1,46 @@
+/* Animácia zmeny farby textu z bielej na modrú */
 @keyframes change_color {
     from {
         color: white;
     }
-
+ 
     to {
         color: rgb(56, 189, 248);
     }
 }
-
+ 
+/* Animácia menenia opacity prvku */
 @keyframes change_opacity {
     from {
         opacity: 0;
     }
-
+ 
     to {
         opacity: 1;
     }
 }
-
+ 
+/* Zmena farby odkazu pri hover */
 a:hover {
     animation-name: change_color;
     animation-duration: 1s;
     color: aquamarine;
 }
-
+ 
+/* Obrázky sa prelínajú so svetlým pozadím */
 img {
     mix-blend-mode: lighten;
 }
-
+ 
+/* Modré radiálne prechodové pozadie pre špecifické bloky s obrázkami ktoré maju biele pozadie */
 .ius_above,
 .td_above {
     background: #99b6de;
     background: radial-gradient(circle, rgba(214, 231, 252, 0.8) 40%, rgb(128, 174, 238) 100%);
     overflow: hidden;
 }
-
+ 
+/* Oblasť obrázka v projektovej karte */
 .project .ius_above {
     grid-area: img;
     display: flex;
@@ -43,18 +49,21 @@ img {
     height: 60%;
     width: 100%;
 }
-
+ 
+/* Obrázok v projektovej karte vypĺňa celý div */
 .project .ius_above img {
     width: 100%;
     height: 100%;
     object-fit: fill;
     display: block;
 }
-
+ 
+/* Obrázok s triedou IUS sa prelína s pozadím */
 img.IUS {
     mix-blend-mode: multiply;
 }
-
+ 
+/* Obrázok v TD pokrýva celú plochu kontajnera */
 #TD .td_above img {
     mix-blend-mode: multiply;
     object-fit: cover;
@@ -63,38 +72,46 @@ img.IUS {
     height: 100%;
     object-fit: cover;
 }
-
+ 
+/* Bočné odsadenie td_above */
 .td_above {
     margin: 0 2vw;
 }
-
+ 
+/* smooth scrolling a riadkovania celej stranky */
 html,
 body {
     scroll-behavior: smooth;
+    line-height: 150%;
 }
-
+ 
+/* Základné nastavenia stránky: čierne pozadie, svetlý text */
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     background: black;
     color: #e7e7e7;
 }
-
+ 
+/* odsadenie sekcií z bokov */
 section {
     margin-left: 2rem;
     margin-right: 2rem;
 }
-
+ 
+/* Hlavný nadpis: modrá farba, 500% písmo */
 h1 {
     color: #38bdf8;
     font-size: 500%;
 }
-
+ 
+/* Podnadpisy: modrá */
 h2,
 h3 {
     color: #38bdf8;
 }
-
+ 
+/* Navigačný panel zarovnaný vpravo s medzerami medzi odkazmi */
 nav {
     display: flex;
     text-align: center;
@@ -104,24 +121,28 @@ nav {
     padding-top: 1%;
     white-space: nowrap
 }
-
+ 
+/* Štýl odkazov */
 nav a {
     text-decoration: none;
     font-style: bold;
     color: white;
 }
-
+ 
+/* grid lozloženie */
 #home {
     display: grid;
     grid-template-areas: "h2 h3" "h1 h1" "text text";
     justify-content: center;
     vertical-align: bottom;
 }
-
+ 
+/* Flex kontajner pre elementy v #home */
 #home div {
     display: flex;
 }
-
+ 
+/* Odstránenie vonkajších odsadení pre texty v #home */
 #home p,
 #home h2,
 #home h3,
@@ -130,39 +151,45 @@ nav a {
     margin-bottom: 0;
     padding: 0.5vw 1vw;
 }
-
+ 
+/* Hlavný nadpis v #home zarovnaný na lavo */
 #home h1 {
-    padding-top: 1vw;
+    padding: 1vw 0;
     grid-area: h1;
     text-align: left;
 }
-
+ 
+/* Podnadpis h2 zarovnaný vpravo sekcie jej nadredenej */
 #home h2 {
     text-align: right;
     grid-area: h2;
     font-size: 80%;
 }
-
+ 
+/* h3 vycentrované vertikálne */
 #home h3 {
     grid-area: h3;
     align-self: center;
     font-size: 80%;
 }
-
+ 
+/* Odstavec: obmedzená šírka, zarovnanie do bloku */
 #home p {
     max-width: 50vw;
     grid-area: text;
     text-align: justify;
     padding-bottom: 1vw;
 }
-
+ 
+/* grid rozloženie #profile */
 #profile {
     margin-top: 2vw;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
 }
-
+ 
+/* Nadpis #profile odsadený zľava */
 #profile h2 {
     padding: 1vw 0 1vw 24%;
     text-align: left;
@@ -171,7 +198,8 @@ nav a {
     grid-row: 1;
     font-size: 200%;
 }
-
+ 
+/* Text #profile vycentrovaný s obmedzenou šírkou */
 #profile p {
     display: block;
     text-align: justify;
@@ -181,41 +209,46 @@ nav a {
     padding: 0 1vw 1vw;
     max-width: 50%;
 }
-
+ 
+/* #school s flex rozložením */
 #school {
     margin-top: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+ 
+/* Nadpis sekcie #school odsadený zľava */
 #school h2 {
-    padding-top: 1vw;
+    padding: 1vw 0;
     margin: 0;
     align-self: flex-start;
     padding-left: 24%;
     font-size: 200%;
 }
-
+ 
+/* Text v #school bez vonkajších medzier */
 #school div p {
     grid-area: text;
     margin: 0;
     padding: 0 1vw 0 0;
     text-align: justify;
 }
-
+    /* Prvý text v prvom bloku #school (vycentrovaný) */
 #school div:first-of-type p:nth-of-type(1) {
     text-align: center;
     margin: 0;
     padding: 0 18vw 0 0;
 }
-
+ 
+/* Prvý text v poslednom bloku #school (vycentrovaný) */
 #school div:last-of-type p:nth-of-type(1) {
     text-align: center;
     margin: 0;
     padding: 0 0 0 18vw;
 }
-
+ 
+/* #school grid rozloženie */
 #school div {
     align-items: start;
     margin: 0 auto;
@@ -223,61 +256,71 @@ nav a {
     grid-template-areas: "nad nad" "text img";
     max-width: 50%;
 }
-
+ 
+/* Posledný blok #school (obrázok vľavo, text vpravo) */
 #school div:last-of-type {
     grid-template-areas: "nad nad" "img text";
 }
-
+ 
+/* Tučný, väčší nadpis #school */
 #school div p:first-child {
     grid-area: nad;
     align-self: end;
     font-weight: bold;
     font-size: 120%;
 }
-
+ 
+/* Spodné odsadenie prvého div #school */
 #school div:first-of-type {
     padding-bottom: 4vw;
 }
-
+ 
+/* Obrázok #school: zarovnaný vľavo */
 #school div img {
     grid-area: img;
     max-width: 70%;
     justify-self: start;
     align-self: center;
 }
-
+ 
+/* Obrázok v poslednom div #school: zarovnaný vpravo */
 #school div:last-of-type img {
     align-self: center;
     justify-self: end;
     padding-right: 1vw;
 }
-
+ 
+/* #projects: flex rozloženie */
 #projects {
     margin-top: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+ 
+/* Hlavný nadpis #projects odsadený zľava */
 #projects h1 {
-    margin: 1rem 0 0;
+    margin: 1rem 0;
     align-self: flex-start;
     padding-left: 14%;
 }
-
+ 
+/* Podnadpis #projects: väčšie písmo, odsadenie zľava */
 #projects h2 {
     font-size: 250%;
     padding-left: 14%;
     align-self: flex-start;
 }
-
+ 
+/* samostatné projekty: rozloženie grid, šírka 80% */
 #projects .project {
     display: grid;
     width: 80%;
     margin: 0 auto;
     align-items: stretch;
 }
-
+ 
+/* Nadpis školského projektu: vycentrovaný */
 #projects #sch-p .nad_project {
     align-self: center;
     justify-self: center;
@@ -285,7 +328,8 @@ nav a {
     display: flex;
     flex-direction: column;
 }
-
+ 
+/* Nadpis nad projektom: bez zalamovaného textu */
 #projects .nad_project h2 {
     margin: 0;
     white-space: nowrap;
@@ -293,12 +337,14 @@ nav a {
     justify-self: center;
     font-size: 200%;
 }
-
+ 
+/* Posledný nadpis nad projektom sa zobrazí s animáciou */
 .nad_project h2:last-of-type {
     animation-name: change_opacity;
     animation-duration: 1s;
 }
-
+ 
+/* Nepárne projekty: obrázok vľavo, text vpravo */
 #projects .project:nth-child(2n-1) {
     grid-template-areas: "img h3" "img txt";
     align-items: stretch;
@@ -306,7 +352,8 @@ nav a {
     grid-template-rows: auto auto;
     align-items: center;
 }
-
+ 
+/* Párne projekty: text vľavo, obrázok vpravo */
 #projects .project:nth-child(2n) {
     grid-template-areas: "h3 img" "txt img";
     align-items: stretch;
@@ -314,7 +361,8 @@ nav a {
     grid-template-rows: auto auto;
     align-items: center;
 }
-
+ 
+/* Podnadpis .project: vycentrovaný, so spodným odsadením */
 .project h3 {
     grid-area: h3;
     text-align: center;
@@ -322,16 +370,18 @@ nav a {
     padding-bottom: 5%;
     margin: 0;
 }
-
+ 
+/* Obrázok nepárneho projektu zarovnaný vpravo */
 #projects .project:nth-child(2n-1) img {
     justify-self: right;
 }
-
+ 
+/* Obrázok párneho projektu zarovnaný vľavo */
 #projects .project:nth-child(2n) img {
     justify-self: left;
 }
-
-
+ 
+/* Spoločné štýly obrázka projektu */
 .project img {
     grid-area: img;
     width: 80%;
@@ -341,7 +391,8 @@ nav a {
     padding: 0 5%;
     align-self: center;
 }
-
+ 
+/* Text projektu zarovnaný do bloku */
 .project p {
     grid-area: txt;
     margin: 0;
@@ -351,14 +402,16 @@ nav a {
     text-align: justify;
     min-height: 0;
 }
-
+ 
+/* Text .project: column flex s vertikálnym vycentrovaním */
 .project .text {
     grid-area: txt;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
+ 
+/* Odkaz v .project: biely text, bez podčiarknutia, zarovnaný dole */
 .project a {
     grid-area: img;
     text-align: center;
@@ -366,26 +419,30 @@ nav a {
     text-decoration: none;
     align-self: flex-end;
 }
-
+ 
+/* Osobné projekty: vycentrované */
 #pers-p {
     justify-content: center;
     align-items: center;
 }
-
+ 
+/* rozloženie grid */
 #projects #TD {
     grid-template-areas: "h2 h2" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
-
+ 
     margin: 0 2rem;
     align-self: center;
     justify-self: center;
 }
-
+ 
+/* Nadpis v #TD: tučný, menšie písmo */
 #TD h2 {
     grid-area: h2;
     font-weight: bold;
     font-size: 150%;
 }
-
+ 
+/* Kontajner obrázka #TD: flex, vycentrovaný obsah */
 .td_above {
     display: flex;
     justify-content: center;
@@ -393,7 +450,8 @@ nav a {
     height: 80%;
     width: 80%;
 }
-
+ 
+/* Texty v #TD: zarovnané do bloku, bez medzier */
 #TD p {
     margin: 0;
     display: flex;
@@ -402,69 +460,82 @@ nav a {
     text-align: justify;
     min-height: 0;
 }
-
+ 
+/* Prvý text v #TD: fixná výška */
 #TD p:first-of-type {
     grid-area: t1;
     height: 10vw;
 }
-
+ 
+/* Druhý obrázok v #TD */
 #TD img:nth-of-type(2) {
     grid-area: i1;
     height: 10vw;
 }
-
+ 
+/* Druhý text v #TD */
 #TD p:nth-of-type(2) {
     grid-area: t2;
 }
-
+ 
+/* Kontajner pre obrázok moje2.png v #TD */
 #TD .td_above:has(img[src$="moje2.png"]) {
     grid-area: i2;
 }
-
+ 
+/* Tretí text v #TD: vertikálne odsadenie */
 #TD p:nth-of-type(3) {
     grid-area: t3;
     padding: 2vw 5%;
 }
-
+ 
+/* Štvrtý text v #TD: ľavé odsadenie */
 #TD p:nth-of-type(4) {
     grid-area: t4;
     padding: 0 0 2vw 5%;
 }
-
+ 
+/* Kontajner pre obrázok moje3.png v #TD */
 #TD .td_above:has(img[src$="moje3.png"]) {
     grid-area: i4;
 }
-
+ 
+/* Odkaz v #TD zarovnaný dole na stred */
 #TD a {
     grid-area: t4;
     align-self: flex-end;
     justify-self: center;
     padding-bottom: 10%;
 }
-
+ 
+/* #skills: colunn flex s vnútorným odsadením */
 #skills {
     margin-top: 2vw;
     padding: 2rem;
     display: flex;
     flex-direction: column;
 }
-
+ 
+/* Nadpis #skills odsadený zľava */
 #skills h2 {
     padding-left: 14%;
     font-size: 200%;
 }
-
+ 
+/* Číslovaný zoznam, odsadený zľava */
 #skills ul {
     list-style: decimal;
     padding-left: 15%;
     align-self: flex-start;
     justify-content: center;
 }
-
+ 
+/* Odsadenie jednotlivých položiek zoznamu */
 #skills li {
     padding: 7px 0 0 0;
 }
-
+ 
+/* #kontakt: zarovnaná vpravo */
 #kontakt {
     display: flex;
     flex-direction: column;
@@ -472,35 +543,41 @@ nav a {
     margin-top: 2vw;
     align-items: center;
     padding-left: 70%;
+    /*nech sa text nezalamuje*/
     white-space: nowrap
 }
-
+ 
+/* Nadpis #kontakt bez vonkajších medzier */
 #kontakt h2 {
     margin: 0;
 }
-
+ 
+/* Text #kontakt s malým odsadením */
 #kontakt p {
     margin: 0.5%;
     text-align: justify;
 }
-
+ 
+/* Odkaz v kontakte – svetlomodrá farba, bez podčiarknutia */
 #kontakt a {
     text-decoration: none;
     color: #97b3d3;
 }
-
-/*apearing dynamic classes*/
+ 
+/* Skrytý prvok: neviditeľný a bez veľkosti */
 .hidden {
     display: none;
     opacity: 0;
     font-size: 0;
 }
-
+ 
+/* Trieda pre animáciu postupného zobrazenia */
 .anim_fade {
     animation: change_opacity;
     animation-duration: 1s;
 }
-
+ 
+/* Fixná navigácia zobrazená po zosúvaní: čierne pozadie, vpravo */
 .show {
     display: flex;
     justify-content: right;
@@ -513,16 +590,18 @@ nav a {
     margin: 0;
     background-color: black;
 }
-
-/*phone + tablet*/
+ 
+/* responzivita pre tablet */
 @media (max-width: 1024px) {
-
+ 
+    /* Menšie písmo a skrytie horizontálneho pretečenia */
     html,
     body {
         font-size: 90%;
         overflow-x: hidden;
     }
-
+ 
+    /* Navigácia vycentrovaná s menším písmom */
     nav {
         font-size: 85%;
         padding-left: 5%;
@@ -530,122 +609,141 @@ nav a {
         gap: 3%;
         max-width: 100%;
     }
-
+ 
+    /* Horné odsadenie nav */
     nav a {
         padding-top: 2%;
     }
-
+ 
+    /* navigácia vycentrovaná */
     .show {
         justify-content: center;
         right: 0;
     }
-
+ 
+    /* Podnadpisy v #home: normálna veľkosť */
     #home h2,
     #home h3 {
         font-size: 100%;
     }
-
+ 
+    /* #home: flex column usporiadanie namiesto grid */
     #home {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
     }
-
+ 
+    /* Poriadok elementov v domovskej sekcii */
     #home div {
         order: 1;
         padding-left: 5%;
     }
-
+ 
     #home h1 {
         padding-left: 4.5%;
         order: 2;
         font-size: 300%;
     }
-
+ 
     #home p {
         max-width: 100%;
         order: 3;
     }
-
+ 
+    /*nadpis #profile odsadený zľava o 5% */
     #profile h2 {
         padding: 1vw 0 1vw 5%;
         text-align: left;
     }
-
+ 
+    /* Text #home na plnú šírku */
     #profile p {
         max-width: 100%;
     }
-
+ 
+    /* #school div: column flex na celú šírku */
     #school div {
         display: flex;
         flex-direction: column;
         margin: 0;
         max-width: 100%;
     }
-
+ 
+    /* Nadpis #school bližšie k ľavému okraju */
     #school h2 {
         padding-left: 5%;
     }
-
+ 
+        /* Text #school: plná šírka so spodným odsadením */
     #school div p {
         width: 100%;
         padding-bottom: 5%;
     }
-
+ 
+    /* Prvý text v #school: vycentrovaný */
     #school div p:first-of-type {
         align-self: center;
     }
-
+ 
+    /* Odstránenie odsadenia prvého nadpisu v prvom bloku */
     #school div:first-of-type p:nth-of-type(1) {
         padding: 0 0 1%;
     }
-
+ 
+    /* Odstránenie odsadenia prvého nadpisu v poslednom bloku */
     #school div:last-of-type p:nth-of-type(1) {
         padding: 0 0 1% 0;
     }
-
+ 
+    /* Sekcia #projects bez vonkajších medzier */
     #projects {
         margin: 0;
     }
-
+ 
+    /* Menší nadpis #projects */
     #projects h1 {
         padding: 0 0 0 5%;
         font-size: 200%;
     }
-
+ 
+    /* Menší podnadpis #projects */
     #projects h2 {
         padding: 0 0 0 5%;
         font-size: 150%;
     }
-
+ 
+    /* Projektové karty: stĺpcový flex na plnú šírku */
     #projects .project {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-
+ 
+    /* Poradie elementov v .project karte a umiestnenie */
     .project p {
         padding: 0 0 2%;
         order: 1;
     }
-
+ 
     .project h3 {
         align-self: center;
         padding: 2% 0 2%;
         order: 0;
     }
-
+ 
     .project img {
         order: 2;
     }
-
+ 
     .project a {
         order: 3;
         align-self: center;
         padding: 2% 0;
     }
-
+ 
+    /* Nadpis projektu zalamuje text a je vycentrovaný */
     #projects .nad_project h2 {
         padding-top: 1rem;
         white-space: wrap;
@@ -653,40 +751,47 @@ nav a {
         justify-self: center;
         text-align: center;
     }
-
+ 
+    /* Blok IUS: obmedzená výška */
     .ius_above {
         max-height: 50vh;
         width: auto;
         margin-bottom: 2%;
     }
-
+ 
+    /* Obrázok bloku IUS: obmedzená výška */
     .ius_above img {
         max-height: 50vh;
         object-fit: cover;
     }
-
+ 
+    /* Obmedzenie výšky iOS a SMT prvkov */
     .ios {
         max-height: 50vh;
     }
-
+ 
     #smt {
         max-height: 50vh;
     }
-
+ 
+    /* Osobné projekty a #TD: stĺpcové usporiadanie */
     #pers-p,
     #TD {
         display: flex;
         flex-direction: column;
     }
-
+ 
+    /* Prvý text v #TD: automatická výška */
     #TD p:first-of-type {
         height: auto;
     }
-
+ 
+    /* Kontajner obrázka TD: vertikálne odsadenie */
     .td_above {
         margin: 5% 0;
     }
-
+ 
+    /* Elementy #TD: rovnaké poradie a odsadenie */
     #TD img,
     #TD h2,
     #TD p,
@@ -694,97 +799,118 @@ nav a {
         order: 0;
         padding: 5% 0;
     }
-
+ 
+    /* Odkaz v #TD: vycentrovaný */
     #TD a {
         justify-self: center;
         align-self: center;
     }
-
+ 
+    /* #skills bez odsadenia */
     #skills {
         padding: 0;
         margin: 0;
     }
-
+ 
     #skills h2 {
         padding: 0 0 0 5%;
     }
-
+ 
+    /* #Kontakt bez odsadenia */
     #kontakt {
         padding: 0;
     }
 }
-
+ 
+/* TABLET (768px – 1023px), platia predošlé pravidla ale vačšie písmo*/
 @media (min-width: 768px) and (max-width: 1023px) {
-
     html,
     body {
         font-size: 100%;
     }
 }
-
+ 
+/* (max. 1240px)*/
 @media (max-width: 1240px) {
+ 
+    /*#school: column flex na celú šírku */
     #school div {
         display: flex;
         flex-direction: column;
         margin: 0;
         max-width: 100%;
     }
-
+ 
+    /* Nadpis #school bližšie k ľavému okraju */
     #school h2 {
         padding-left: 5%;
     }
-
+ 
+    /* Text #school: plná šírka so spodným odsadením */
     #school div p {
         width: 100%;
         padding-bottom: 5%;
     }
-
+ 
+    /* Prvý text vycentrovaný */
     #school div p:first-of-type {
         align-self: center;
     }
-
+ 
     #school div:first-of-type p:nth-of-type(1) {
         padding: 0 0 1%;
     }
-
+ 
     #school div:last-of-type p:nth-of-type(1) {
         padding: 0 0 1% 0;
     }
-
+ 
+    /* Vybrané bloky školských projektov: column flex */
     #sch-p div:nth-last-of-type(2),#projects .project:nth-of-type(2), #sch-p div:nth-of-type(3) {
         display: flex;
         flex-direction: column;
     }
-
+ 
+    /* Podnadpisy vybraných projektov: poradie a odsadenie */
     #sch-p div:nth-last-of-type(2) h3,#sch-p div:nth-of-type(2) h3 ,#sch-p div:nth-of-type(3) h3{
         order: 1;
         padding-top: 4%;
         padding-bottom: 0;
         align-self: center;
     }
-
+ 
+    /* Texty vybraných projektov: poradie a odsadenie */
     #sch-p div:nth-last-of-type(2) p, #sch-p div:nth-of-type(2) p,#sch-p div:nth-of-type(3) p{
         order: 2;
         padding-top: 4%;
     }
-
+ 
+    /* Obrázky vybraných projektov – poradie a odsadenie */
     #sch-p div:nth-last-of-type(2) img, #sch-p div:nth-of-type(2) img,#sch-p div:nth-of-type(3) img {
         order: 3;
         padding-top: 4%;
     }
-
+ 
+    /* Odkazy vybraných projektov – poradie a odsadenie */
     #sch-p div:nth-last-of-type(2) a, #sch-p div:nth-of-type(2) a,#sch-p div:nth-child(3) a{
         order: 4;
         padding-top: 4%;
         align-self: center;
     }
+ 
+    /* Spodné odsadenie projektov */
     .project{
         padding-bottom: 5%;
     }
+ 
+    /* Prvý text v #TD: automatická výška */
     #TD p:first-of-type {
     height: auto;
     }
+ 
+    /* Texty v #TD: spodné odsadenie */
     #TD p{
         padding-bottom: 5%;
     }
 }
+ 

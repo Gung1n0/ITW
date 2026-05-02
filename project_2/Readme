@@ -1,3 +1,11 @@
+popis riešenia:
+ - Web je realizovaný ako jeden dokument s rozdelením na sekcie: 
+    - Úvod, O mne, Zručnosti, Projekty a Kontakt a navigácia
+ - Navigácia je zakotvená v pravej hornej časti stránky, čo sa podla veľkosti displaya môže meniť
+ - Na rozloženie stránky je použitý Flexbox a Grid
+ - Stránka je plne responzívna a prispôsobuje sa rôznym veľkostiam obrazoviek
+ - Interaktivita je zabezpečená pomocou CSS (hover) a JavaScriptu (miznutie prvkov, zobrazenie celého názvu predmetu po namierení)
+ - Design je zameraný na jednoduchosť a čitateľnosť
 Využitie AI:
  - počiatočné generovanie textov
  - debugovanie
