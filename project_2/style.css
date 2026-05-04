@@ -24,7 +24,7 @@
 a:hover {
     animation-name: change_color;
     animation-duration: 1s;
-    color: aquamarine;
+    color: rgb(56, 189, 248);
 }
  
 /* Obrázky sa prelínajú so svetlým pozadím */
@@ -116,7 +116,7 @@ nav {
     display: flex;
     text-align: center;
     margin: 0.5rem 2rem;
-    justify-content: right;
+    justify-content: center;
     gap: 20px;
     padding-top: 1%;
     white-space: nowrap
@@ -127,6 +127,43 @@ nav a {
     text-decoration: none;
     font-style: bold;
     color: white;
+}
+/*nastavenie ikón*/
+nav a:first-child::before{
+    content: "\f015";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
+}
+nav a:nth-child(2)::before{
+    content: "\f2bd";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
+}
+nav a:nth-child(3)::before{
+    content: "\f02d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
+}
+nav a:nth-child(4)::before{
+    content: "\f1ad";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
+}
+nav a:nth-child(5)::before{
+    content: "\f022";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
+}
+nav a:last-child::before{
+    content: "\f0e0";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    margin-right: 10%;
 }
  
 /* grid lozloženie */
@@ -146,17 +183,18 @@ nav a {
 #home p,
 #home h2,
 #home h3,
-#home h1 {
+#home a h1 {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0.5vw 1vw;
 }
  
 /* Hlavný nadpis v #home zarovnaný na lavo */
-#home h1 {
+#home a {
     padding: 1vw 0;
     grid-area: h1;
     text-align: left;
+ text-decoration: none;
 }
  
 /* Podnadpis h2 zarovnaný vpravo sekcie jej nadredenej */
@@ -592,7 +630,7 @@ nav a {
 }
  
 /* responzivita pre tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
  
     /* Menšie písmo a skrytie horizontálneho pretečenia */
     html,
@@ -603,16 +641,33 @@ nav a {
  
     /* Navigácia vycentrovaná s menším písmom */
     nav {
-        font-size: 85%;
         padding-left: 5%;
         justify-content: center;
-        gap: 3%;
+        gap: 15%;
         max-width: 100%;
     }
  
     /* Horné odsadenie nav */
     nav a {
         padding-top: 2%;
+        font-size: 0;
+        position: relative;
+    }
+    nav a::before{
+        font-size: 20px;
+    }
+    /*nastavenie textu každeho elementu po namierení*/
+    nav a::after{
+        font-size: 15px;
+        content: "";
+        width: 50px;
+        background-color: rgba(85, 130, 151, 0.596);
+        display: none;
+        position: absolute;
+        transform: translateX(-25%);
+    }
+    nav a:hover::after{
+        display: block;
     }
  
     /* navigácia vycentrovaná */
@@ -641,9 +696,13 @@ nav a {
         padding-left: 5%;
     }
  
-    #home h1 {
+    #home a {
         padding-left: 4.5%;
         order: 2;
+
+    }
+    #home h1
+    {
         font-size: 300%;
     }
  
