@@ -1,23 +1,32 @@
 /* Animácia zmeny farby textu z bielej na modrú */
 @keyframes change_color {
-    from {
-        color: white;
-    }
-
-    to {
-        color: rgb(56, 189, 248);
-    }
+    from { color: white; }
+    to { color: rgb(56, 189, 248); }
 }
 
 /* Animácia menenia opacity prvku */
 @keyframes change_opacity {
-    from {
-        opacity: 0;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-    to {
-        opacity: 1;
-    }
+/* Skrytie obsahu projektu s animáciou */
+.content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+/* Zobrazenie obsahu aktívneho projektu */
+.project.active .content {
+    max-height: 4000px;
+    opacity: 1;
+}
+
+/* Kurzor pre klikateľný nadpis projektu */
+.toggle {
+    cursor: pointer;
 }
 
 /* Zmena farby odkazu pri hover */
@@ -48,10 +57,11 @@ img {
     align-items: center;
     height: 60%;
     width: 100%;
+    margin: 0 3%;
 }
 
 /* Obrázok v projektovej karte vypĺňa celý div */
-.project .ius_above img {
+.project .content .ius_above img {
     width: 100%;
     height: 100%;
     object-fit: fill;
@@ -66,11 +76,10 @@ img.IUS {
 /* Obrázok v TD pokrýva celú plochu kontajnera */
 #TD .td_above img {
     mix-blend-mode: multiply;
-    object-fit: cover;
+    object-fit: fill;
     padding: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 /* Bočné odsadenie td_above */
@@ -359,7 +368,8 @@ nav a:last-child::before {
 
 /* samostatné projekty: rozloženie grid, šírka 80% */
 #projects .project {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 80%;
     margin: 0 auto;
     align-items: stretch;
@@ -389,31 +399,87 @@ nav a:last-child::before {
     animation-duration: 1s;
 }
 
-/* Nepárne projekty: obrázok vľavo, text vpravo */
-#projects .project:nth-child(2n-1) {
-    grid-template-areas: "img h3" "img txt";
-    align-items: stretch;
-    margin: 0 auto;
-    grid-template-rows: auto auto;
-    align-items: center;
+/* Obsah projektu zobrazený ako flex */
+.content {
+    display: flex;
 }
 
-/* Párne projekty: text vľavo, obrázok vpravo */
-#projects .project:nth-child(2n) {
-    grid-template-areas: "h3 img" "txt img";
-    align-items: stretch;
-    margin: 0 auto;
-    grid-template-rows: auto auto;
+/* Nepárne projekty: text vľavo, obrázok vpravo */
+#projects .project:nth-child(2n-1) .content {
+    flex-direction: row;
     align-items: center;
+    margin: 0 auto;
+}
+
+/* Text nepárneho projektu: poradie 1, minimálna šírka 50% */
+#projects .project:nth-child(2n-1) .content p {
+    order: 1;
+    padding: 0;
+    min-width: 50%;
+    align-self: center;
+}
+
+/* Obrázok nepárneho projektu: poradie 2 */
+#projects .project:nth-child(2n-1) .content img {
+    order: 2;
+}
+
+/* Párne projekty: obrázok vľavo, text vpravo */
+#projects .project:nth-child(2n) .content {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Text párneho projektu: poradie 2 */
+#projects .project:nth-child(2n) .content p {
+    order: 2;
+    padding: 0;
+    align-self: center;
+}
+
+/* Obrázok párneho projektu: poradie 1, minimálna šírka 50% */
+#projects .project:nth-child(2n) .content img {
+    order: 1;
+    min-width: 50%;
+}
+
+/* Odkaz nepárneho projektu: poradie 3 */
+#projects .project:nth-child(2n-1) .content a {
+    order: 3;
+}
+
+/* Obmedzenie výšky #smt a .ios obrázkov */
+#smt {
+    max-height: 50vh;
+}
+
+.ios {
+    max-height: 50vh;
+}
+
+/* Obmedzenie šírky obrázkov dynamickej pamäte a izlo */
+#projects img[src$="dynam_mem.png"] {
+    max-width: 25vw;
+    padding-right: 1%;
+}
+
+#projects img[src$="izlo1.png"] {
+    max-width: 25vw;
+    padding-right: 1%;
 }
 
 /* Podnadpis .project: vycentrovaný, so spodným odsadením */
 .project h3 {
-    grid-area: h3;
     text-align: center;
-    align-self: flex-end;
+    align-self: center;
     padding-bottom: 5%;
     margin: 0;
+}
+
+/* Odkaz v projekte: vycentrovaný */
+.project a {
+    align-self: center;
 }
 
 /* Obrázok nepárneho projektu zarovnaný vpravo */
@@ -427,7 +493,7 @@ nav a:last-child::before {
 }
 
 /* Spoločné štýly obrázka projektu */
-.project img {
+.project .content img {
     grid-area: img;
     width: 80%;
     height: 80%;
@@ -438,7 +504,7 @@ nav a:last-child::before {
 }
 
 /* Text projektu zarovnaný do bloku */
-.project p {
+.project .content p {
     grid-area: txt;
     margin: 0;
     display: flex;
@@ -457,12 +523,12 @@ nav a:last-child::before {
 }
 
 /* Odkaz v .project: biely text, bez podčiarknutia, zarovnaný dole */
-.project a {
+.project .content a {
     grid-area: img;
     text-align: center;
     color: white;
     text-decoration: none;
-    align-self: flex-end;
+    align-self: center;
 }
 
 /* Osobné projekty: vycentrované */
@@ -471,92 +537,103 @@ nav a:last-child::before {
     align-items: center;
 }
 
-/* rozloženie grid */
+/* rozloženie #TD: stĺpcový flex, vycentrovaný, šírka 80% */
 #projects #TD {
-    grid-template-areas: "h2 h2" "t1 i1" "t2 i2" "t3 t3" "t4 i4";
-
+    display: flex;
+    flex-direction: column;
     margin: 0 2rem;
     align-self: center;
     justify-self: center;
+    width: 80%;
 }
 
 /* Nadpis v #TD: tučný, menšie písmo */
 #TD h2 {
-    grid-area: h2;
     font-weight: bold;
     font-size: 150%;
 }
 
-/* Kontajner obrázka #TD: flex, vycentrovaný obsah */
-.td_above {
+/* Riadok TD projektu: flex s odsadením zdola */
+.td-row {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    height: 80%;
-    width: 80%;
+    width: 100%;
+    padding-bottom: 5%;
 }
 
-/* Texty v #TD: zarovnané do bloku, bez medzier */
-#TD p {
+/* Text v TD riadku: zarovnaný do bloku */
+.td-row p {
+    flex: 1;
     margin: 0;
-    display: flex;
-    align-self: center;
     padding: 0 5%;
     text-align: justify;
-    min-height: 0;
 }
 
-/* Prvý text v #TD: fixná výška */
-#TD p:first-of-type {
-    grid-area: t1;
-    height: 10vw;
+/* Prvý a druhý text v TD: automatická výška */
+.td-row .t1,
+.td-row .t2 {
+    height: auto;
+    display: flex;
+    align-items: center;
 }
 
-/* Druhý obrázok v #TD */
-#TD img:nth-of-type(2) {
-    grid-area: i1;
-    height: 10vw;
-}
-
-/* Druhý text v #TD */
-#TD p:nth-of-type(2) {
-    grid-area: t2;
-}
-
-/* Kontajner pre obrázok moje2.png v #TD */
-#TD .td_above:has(img[src$="moje2.png"]) {
-    grid-area: i2;
-}
-
-/* Tretí text v #TD: vertikálne odsadenie */
-#TD p:nth-of-type(3) {
-    grid-area: t3;
+/* Tretí text v TD: vertikálne odsadenie */
+.td-row .t3 {
     padding: 2vw 5%;
 }
 
-/* Štvrtý text v #TD: ľavé odsadenie */
-#TD p:nth-of-type(4) {
-    grid-area: t4;
+/* Štvrtý text v TD: ľavé odsadenie */
+.td-row .t4 {
     padding: 0 0 2vw 5%;
 }
 
-/* Kontajner pre obrázok moje3.png v #TD */
-#TD .td_above:has(img[src$="moje3.png"]) {
-    grid-area: i4;
+/* Kontajner obrázka v TD riadku: obmedzená šírka, bez vonkajšieho odsadenia */
+#TD .td-row .td_above {
+    flex: 1;
+    max-width: 30vw;
+    margin: 0 5% 0 0;
 }
 
-/* Odkaz v #TD zarovnaný dole na stred */
-#TD a {
-    grid-area: t4;
+/* Obrázok v TD riadku: automatická výška, pokrytie plochy */
+#TD .td-row .td_above img {
+    object-fit: cover;
+    max-width: 50vw;
+    height: auto;
+}
+
+/* Odkaz v TD riadku: vycentrovaný */
+#TD .td-row a {
+    flex: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 1vw 0;
+}
+
+/* Odkaz v TD obsahu: zarovnaný dole na stred */
+#TD .content a {
     align-self: flex-end;
-    justify-self: center;
-    padding-bottom: 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Obsah TD projektu: stĺpcový flex */
+#TD .content {
+    display: flex;
+    flex-direction: column !important;
+}
+
+/* Posledný TD riadok bez spodného odsadenia */
+.td-row:last-of-type {
+    padding-bottom: 0;
 }
 
 /* #skills: colunn flex s vnútorným odsadením */
 #skills {
     margin-top: 2vw;
-    padding: 2rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -588,7 +665,6 @@ nav a:last-child::before {
     margin-top: 2vw;
     align-items: center;
     padding-left: 70%;
-    /*nech sa text nezalamuje*/
     white-space: nowrap
 }
 
@@ -635,15 +711,19 @@ nav a:last-child::before {
     margin: 0;
     background-color: black;
 }
-.show a{
+
+/* Odsadenie odkazov v .show navigácii */
+.show a {
     margin-right: 5%;
 }
 
+/* Burger menu: skryté mimo mobilného zobrazenia */
 #burger {
     display: none;
     flex-direction: column;
 }
 
+/* Odkaz v burger menu */
 #burger a {
     display: block;
     width: 25px;
@@ -657,9 +737,12 @@ nav a:last-child::before {
         gap: 15%;
         max-width: 100%;
     }
-    .show a{
-    margin-right: 0;
-}
+
+    /* Bez odsadenia odkazov v .show na tablete */
+    .show a {
+        margin-right: 0;
+    }
+
     /* Horné odsadenie nav */
     nav a {
         padding-top: 2%;
@@ -722,8 +805,6 @@ nav a:last-child::before {
         overflow-x: hidden;
     }
 
-    /* Navigácia vycentrovaná s menším písmom */
-
     /* navigácia vycentrovaná */
     .show {
         justify-content: center;
@@ -753,7 +834,6 @@ nav a:last-child::before {
     #home a {
         padding-left: 4.5%;
         order: 2;
-
     }
 
     #home h1 {
@@ -771,7 +851,7 @@ nav a:last-child::before {
         text-align: left;
     }
 
-    /* Text #home na plnú šírku */
+    /* Text #profile na plnú šírku */
     #profile p {
         max-width: 100%;
     }
@@ -835,9 +915,14 @@ nav a:last-child::before {
     }
 
     /* Poradie elementov v .project karte a umiestnenie */
-    .project p {
+    .project div p {
         padding: 0 0 2%;
         order: 1;
+    }
+
+    /* Obsah projektu: stĺpcové zobrazenie na tablete */
+    .project .content {
+        flex-direction: column !important;
     }
 
     .project h3 {
@@ -846,11 +931,11 @@ nav a:last-child::before {
         order: 0;
     }
 
-    .project img {
+    .project div img {
         order: 2;
     }
 
-    .project a {
+    .project .content a {
         order: 3;
         align-self: center;
         padding: 2% 0;
@@ -870,6 +955,7 @@ nav a:last-child::before {
         max-height: 50vh;
         width: auto;
         margin-bottom: 2%;
+        margin: 0;
     }
 
     /* Obrázok bloku IUS: obmedzená výška */
@@ -883,8 +969,9 @@ nav a:last-child::before {
         max-height: 50vh;
     }
 
-    #smt {
-        max-height: 50vh;
+    /* Obmedzenie výšky obrázka #smt */
+    #smt img {
+        max-height: 30vh;
     }
 
     /* Osobné projekty a #TD: stĺpcové usporiadanie */
@@ -908,13 +995,13 @@ nav a:last-child::before {
     #TD img,
     #TD h2,
     #TD p,
-    #TD a {
+    #TD .content a {
         order: 0;
         padding: 5% 0;
     }
 
     /* Odkaz v #TD: vycentrovaný */
-    #TD a {
+    #TD .content a {
         justify-self: center;
         align-self: center;
     }
@@ -934,10 +1021,32 @@ nav a:last-child::before {
         padding: 0;
     }
 }
+
 @media (max-width: 425px) {
+
+    /* Obsah projektu: stĺpcové zobrazenie na mobile */
+    .content {
+        flex-direction: column !important;
+    }
+
+    /* Poradie elementov obsahu na mobile */
+    .content p {
+        order: 1 !important;
+    }
+
+    .content img {
+        order: 2 !important;
+    }
+
+    .content a {
+        order: 3 !important;
+    }
+
     body {
         padding-top: 40px;
     }
+
+    /* Fixná navigácia na mobile */
     #nav {
         position: fixed;
         top: 0;
@@ -947,17 +1056,21 @@ nav a:last-child::before {
         display: flex;
         flex-direction: column;
         background-color: black;
-        gap:0;
+        gap: 0;
     }
-    #nav a{
+
+    /* Odsadenie odkazov v mobilnej navigácii */
+    #nav a {
         padding: 10px 0;
     }
 
+    /* Burger menu viditeľné na mobile */
     #burger {
         display: block;
         width: 100%;
     }
 
+    /* Skrytie odkazov navigácie pred otvorením */
     #nav a {
         display: none;
         width: 100%;
@@ -966,24 +1079,33 @@ nav a:last-child::before {
         text-align: left;
         background-color: black;
     }
+
+    /* Odstránenie pseudo-elementu burger menu */
     #burger::before {
-    content: none;
-}
-    #nav #burger a{
+        content: none;
+    }
+
+    /* Odkaz vnútri burger menu */
+    #nav #burger a {
         display: block;
         width: 30%;
     }
-    #burger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 4px 0;
-}
 
+    /* Čiary burger menu */
+    #burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+    }
+
+    /* Zobrazenie odkazov po otvorení menu */
     #nav.active a {
         display: block;
     }
+
+    /* Fixná navigácia po scrollovaní na mobile */
     #nav.show {
         padding-top: 10px;
         padding-left: 20px;
@@ -993,19 +1115,36 @@ nav a:last-child::before {
         height: auto;
         justify-content: flex-start;
     }
-    nav a:nth-child(2)::before{
+
+    /* Skrytie ikony prvého odkazu na mobile */
+    nav a:nth-child(2)::before {
         display: none;
     }
-    #nav.active a:nth-child(2){
+
+    /* Skrytie druhého odkazu pri otvorenom menu */
+    #nav.active a:nth-child(2) {
         display: none;
     }
-    button{
+
+    /* Tlačidlo bez štýlovania prehliadača */
+    button {
         border: none;
         width: 100%;
         background: none;
         color: white;
     }
+
+    /* TD riadky na mobile: stĺpcové zobrazenie */
+    .td-row {
+        flex-direction: column;
+    }
+
+    /* Ikona odkazu vnútri tlačidla */
+    button a::before {
+        content: "\f015" !important;
+    }
 }
+
 /* TABLET (768px – 1023px), platia predošlé pravidla ale vačšie písmo*/
 @media (min-width: 768px) and (max-width: 1023px) {
 
@@ -1062,7 +1201,7 @@ nav a:last-child::before {
     #sch-p div:nth-last-of-type(2) h3,
     #sch-p div:nth-of-type(2) h3,
     #sch-p div:nth-of-type(3) h3 {
-        order: 1;
+        order: 0;
         padding-top: 4%;
         padding-bottom: 0;
         align-self: center;
@@ -1072,7 +1211,7 @@ nav a:last-child::before {
     #sch-p div:nth-last-of-type(2) p,
     #sch-p div:nth-of-type(2) p,
     #sch-p div:nth-of-type(3) p {
-        order: 2;
+        order: 1;
         padding-top: 4%;
     }
 
@@ -1106,5 +1245,10 @@ nav a:last-child::before {
     /* Texty v #TD: spodné odsadenie */
     #TD p {
         padding-bottom: 5%;
+    }
+
+    /* Minimálna šírka bloku IUS */
+    .ius_above {
+        min-width: 30vw;
     }
 }
